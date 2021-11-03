@@ -1,0 +1,82 @@
+﻿@model CreateLocationDto
+
+@{
+    ViewData["Title"] = "اضافة موقع جديد";
+    Layout = null;
+}
+
+        <form asp-action="Create" class="ajaxForm" tname="#kt_datatable" >
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label asp-for="Country" class="control-label"></label>
+                        <input asp-for="Country" class="form-control" />
+                        <span asp-validation-for="Country" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label asp-for="City" class="control-label"></label>
+                        <input asp-for="City" class="form-control" />
+                        <span asp-validation-for="City" class="text-danger"></span>
+                    </div>
+                </div> <div class="col-md-4">
+                    <div class="form-group">
+                        <label asp-for="Street" class="control-label"></label>
+                        <input asp-for="Street" class="form-control" />
+                        <span asp-validation-for="Street" class="text-danger"></span>
+                    </div>
+                </div> <div class="col-md-4">
+                    <div class="form-group">
+                        <label asp-for="StreetNumber" class="control-label"></label>
+                        <input asp-for="StreetNumber" class="form-control" />
+                        <span asp-validation-for="StreetNumber" class="text-danger"></span>
+                    </div>
+                </div>
+            </div>
+            
+           
+            <div class="form-group">
+                <input type="submit" value="اضافة" class="btn btn-primary" />
+                <a data-dismiss="modal" aria-label="Close" class="btn btn-danger">الغاء</a>
+            </div>
+        </form>
+        <br />
+        <br/>
+        <br />
+        <div class="col-md-6">
+
+            <div class="col-md-6">
+                <div id="map" style="height: 300px; width: 750px ; "></div>
+                <script>
+                    var map;
+                    function initMap() {
+                        map = new google.maps.Map(document.getElementById("map"), {
+                            center: { lat: 31.519320, lng: 34.449314 },
+
+                            zoom: 15,
+                        });
+
+                        var fourReal = new google.maps.Marker({
+                            position: { lat: 31.519320, lng: 34.449314 },
+                            map: map
+                        });
+
+
+                    }
+
+                </script>
+                <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCflMBa61moKzPR5dt42C_ZmSKm9UeUTbw&callback=initMap"></script>
+
+            </div>
+
+        </div>
+
+
+<script>
+    PageLoadActions();
+</script>
+
+<script src="~/lib/jquery-validation/dist/jquery.validate.js"></script>
+<script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js"></script>

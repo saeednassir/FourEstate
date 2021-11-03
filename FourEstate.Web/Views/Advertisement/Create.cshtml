@@ -1,0 +1,143 @@
+﻿@model CreateAdvertisementDto
+
+@{
+    ViewData["Title"] = "اضافة اعلان جديد";
+    Layout = null;
+}
+
+<form asp-action="Create" class="ajaxForm" tname="#kt_datatable">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+    <input type="hidden" asp-for="Owner.UserType" value="@UserType.AdvertisementOwner" /> 
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="form-group">
+                <label asp-for="Title" class="control-label"></label>
+                <input asp-for="Title" class="form-control" />
+                <span asp-validation-for="Title" class="text-danger"></span>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="row">
+        <div class="col-md-4">
+            <div class="form-group">
+                <label asp-for="StartDate" class="control-label"></label>
+                <input asp-for="StartDate" class="form-control" />
+                <span asp-validation-for="StartDate" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="form-group">
+                <label asp-for="EndDate" class="control-label"></label>
+                <input asp-for="EndDate" class="form-control" />
+                <span asp-validation-for="EndDate" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="form-group">
+                <label asp-for="Price" class="control-label"></label>
+                <input asp-for="Price" class="form-control" />
+                <span asp-validation-for="Price" class="text-danger"></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-6">
+            <div class="form-group">
+                <label asp-for="Image" class="control-label"></label>
+                <input asp-for="Image" class="form-control" />
+                <span asp-validation-for="Image" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                <label asp-for="WebsiteUrl" class="control-label"></label>
+                <input asp-for="WebsiteUrl" class="form-control" />
+                <span asp-validation-for="WebsiteUrl" class="text-danger"></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-6" >
+            <div class="form-group" >
+                <label  class="control-label">نوع الاعلان</label>
+                <select id="ownerType" class="form-control text-center">
+                    <option value="5">--اختر--</option>
+                    <option value="1">اول مرة</option>
+                    <option value="2">موجود مسبقا</option>
+                </select>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="row" id="userInfo">
+        <div class="col-md-4">
+            <div class="form-group">
+                <label asp-for="Owner.FullName" class="control-label"></label>
+                <input asp-for="Owner.FullName" class="form-control" />
+                <span asp-validation-for="Owner.FullName" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="form-group">
+                <label asp-for="Owner.PhoneNumber" class="control-label"></label>
+                <input asp-for="Owner.PhoneNumber" class="form-control" />
+                <span asp-validation-for="Owner.PhoneNumber" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="form-group">
+                <label asp-for="Owner.Email" class="control-label"></label>
+                <input asp-for="Owner.Email" class="form-control" />
+                <span asp-validation-for="Owner.Email" class="text-danger"></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="row" id="userList">
+        <div class="col-md-6">
+            <div class="form-group">
+                <label asp-for="OwnerId" class="control-label"></label>
+                <select asp-for="OwnerId" class="form-control" asp-items="@ViewBag.owners">
+                  
+                 </select>
+                <span asp-validation-for="OwnerId" class="text-danger"></span>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="form-group">
+        <input type="submit" value="اضافة" class="btn btn-primary" />
+        <a data-dismiss="modal" aria-label="Close" class="btn btn-danger">الغاء</a>
+    </div>
+</form>
+
+
+<script>
+    PageLoadActions();
+
+    $('#userInfo').hide();
+    $('#userList').hide();
+
+    $('#ownerType').on('change', function () {
+        if (this.value == 1) {
+            $('#userInfo').show();
+            $('#userList').hide();
+        } else if (this.value == 2) {
+            $('#userList').show();
+            $('#userInfo').hide();
+        }
+    });
+
+
+</script>
+
+<script src="~/lib/jquery-validation/dist/jquery.validate.js"></script>
+<script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js"></script>

@@ -1,0 +1,445 @@
+﻿@{ ViewData["Title"] = "الصفحة الرئيسية"; }
+@model DashboardViewModel
+    <link href="~/css/myHomeCss.css" rel="stylesheet" />
+    @*<link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lalezar&display=swap" rel="stylesheet">*@
+
+
+
+    <!--begin::Card-->
+    <div class="card card-custom">
+        <div class="card-header flex-wrap border-0 pt-6 pb-0">
+            <div class="card-title">
+                <h1 class="card-label">
+                    إحصائيات
+                </h1>
+            </div>
+        </div>
+
+        <div class="card-body">
+
+            @*<div class="row">
+                    <div class="col-md-3">
+                        <div class="alert alert-info">
+                            <h2>عدد المستخدمين</h2>
+                            <h3> @Model.NoumberOfUsers</h3>
+                        </div>
+
+
+                    </div>
+                    <div class="col-md-3">
+                        <div class="alert alert-info">
+                            <h1>عدد العقارات</h1>
+                            <h3>@Model.NoumberOfRealEstate</h3>
+                        </div>
+
+                    </div>
+                    <div class="col-md-3">
+                        <div class="alert alert-info">
+                            <h1>عدد التصنيفات</h1>
+                            <h3> @Model.NoumberOfCategory</h3>
+                        </div>
+
+                    </div>
+                    <div class="col-md-3">
+                        <div class="alert alert-info">
+                            <h1>عدد الإعلانات</h1>
+                            <h3>@Model.NoumberOfAdvertisment</h3>
+                        </div>
+
+                    </div>
+
+                </div>
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="alert alert-info">
+                            <h1>عدد العقود</h1>
+                            <h3> @Model.NoumberOfContracts</h3>
+                        </div>
+
+
+                    </div>
+                    <div class="col-md-3">
+                        <div class="alert alert-info">
+                            <h1>عدد المواقع</h1>
+                            <h3>@Model.NoumberOfLocation</h3>
+                        </div>
+
+                    </div>
+                    <div class="col-md-3">
+                        <div class="alert alert-info">
+                            <h1>عدد الزبائن</h1>
+                            <h3> @Model.NoumberOfCustomer</h3>
+                        </div>
+
+                    </div>
+                </div>*@
+
+            <!-- Start Statices Setion -->
+            <section class="Statices text-center">
+                <div class="Statices-back" style="background-color: #efecec">
+                    <div class="container ">
+                        <div class="row">
+                            <div class="col-lg-3 col-md-6 col-xs-12">
+                                <div class="static-box  wow bounceInDown" data-wow-duration=".5s">
+                                    <img src="~/ThemImages/Home header/administrator.png" alt="Customer Service">
+                                    <h2 style="color:#a1a1a1">عدد المستخدمين</h2>
+                                    <!-- <p class="lead mx-auto">24/7h</p> -->
+                                    @*     <h1><span class='one'>@Model.NoumberOfUsers</span></h1>*@
+                                    <p class="lead mx-auto">@Model.NoumberOfUsers</p>
+
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-md-6 col-xs-12">
+                                <div class="static-box wow bounceInDown" data-wow-duration=".5s" data-wow-delay=".5s" >
+                                    <img src="~/ThemImages/Home header/ancient.png" alt="businessman">
+                                    <h2 style="color:#a1a1a1">عدد العقارات</h2>
+                                    <!-- <p class="lead mx-auto">115</p> -->
+                                    @* <h1>@Model.NoumberOfRealEstate</h1>*@
+                                    <p class="lead mx-auto">@Model.NoumberOfRealEstate</p>
+
+
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-md-6 col-xs-12">
+                                <div class="static-box wow bounceInDown" data-wow-duration=".5s" data-wow-delay="1s">
+                                    <img src="~/ThemImages/Home header/bars-chart-1.png" alt="crm">
+                                    <h2 style="color:#a1a1a1">عدد التصنيفات</h2>
+                                    <!-- <p class="lead mx-auto">503</p> -->
+                                    @*<h1>@Model.NoumberOfCategory</h1>*@
+                                    <p class="lead mx-auto">@Model.NoumberOfCategory</p>
+
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-md-6 col-xs-12">
+                                <div class="static-box wow bounceInDown" data-wow-duration=".5s" data-wow-delay="1.5s" >
+                                    <img id="img-1" src="~/ThemImages/Home header/text-lines-3.png" alt="browser">
+                                    <h2 style="color:#a1a1a1">عدد الإعلانات</h2>
+                                    <!-- <p class="animate__zoomOutDown" class="lead mx-auto">433</p> -->
+                                    @* <h1>@Model.NoumberOfAdvertisment</h1>*@
+                                    <p class="lead mx-auto">@Model.NoumberOfAdvertisment</p>
+
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End row -->
+                        <div class="row" style="margin-top:40px">
+                            <div class="col-lg-4 col-md-6 col-xs-12">
+                                <div class="static-box wow bounceInDown" data-wow-duration=".5s" data-wow-delay="2s" >
+                                    <img src="~/ThemImages/Home header/wikipedia-1.png" alt="Customer Service">
+                                    <h2 style="color:#a1a1a1">عدد العقود</h2>
+                                    <!-- <p class="lead mx-auto">24/7h</p> -->
+                                    @* <h1>@Model.NoumberOfContracts</h1>*@
+                                    <p class="lead mx-auto">@Model.NoumberOfContracts</p>
+
+
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-6 col-xs-12">
+                                <div class="static-box wow bounceInDown" data-wow-duration=".5s" data-wow-delay="2.5s">
+                                    <img class="img-fluid" src="~/ThemImages/Home header/webcam.png" alt="businessman">
+                                    <h2 style="color:#a1a1a1">عدد المواقع</h2>
+                                    <!-- <p class="lead mx-auto">115</p> -->
+                                    @* <h1>@Model.NoumberOfLocation</h1>*@
+                                    <p class="lead mx-auto">@Model.NoumberOfLocation</p>
+
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-6 col-xs-12">
+                                <div class="static-box wow bounceInDown" data-wow-duration=".5s" data-wow-delay="3s">
+                                    <img src="~/ThemImages/Home header/customer-service.png" alt="crm">
+                                    <h2 style="color:#a1a1a1">عدد الزبائن</h2>
+                                    <!-- <p class="lead mx-auto">503</p> -->
+                                    @*<h1>@Model.NoumberOfCustomer</h1>*@
+                                    <p class="lead mx-auto">@Model.NoumberOfCustomer</p>
+                                </div>
+                            </div>
+
+                        </div>
+                        <!-- End row -->
+                    </div>
+                    <!-- End container -->
+                </div>
+                <!-- end Statices-back -->
+            </section>
+            <!-- End Statices Setion -->
+
+
+            <br />
+            <hr />
+
+
+            <div class="row">
+                <div class="col-md-6 text-center wow animate__backInLeft" data-wow-duration=".5s" data-wow-delay=".5s"data-wow-offset="200">
+                    <h3>توزيع المستخدمين حسب النوع </h3>
+                    <canvas id="myUserChart" width="400" height="400"></canvas>
+                </div>
+
+                <div class="col-md-6 text-center wow animate__backInLeft" data-wow-duration="1s" data-wow-delay="1s" data-wow-offset="200">
+                    <h3>توزيع العقارات حسب النوع </h3>
+                    <canvas id="myRealEstateChart" width="400" height="400"></canvas>
+                </div>
+            </div>
+            <br />
+
+            <div class="row">
+                <div class="col-md-6 text-center offset-3 wow animate__backInUp" data-wow-duration=".5s" data-wow-offset="200">
+                    <h3>توزيع العقود حسب النوع </h3>
+                    <canvas id="myContractChart" width="400" height="400"></canvas>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+    @section Scripts{
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.5.1/chart.min.js"></script>
+        @*<script>*@
+        @*$.ajax(
+                    {
+                        url: "/Home/GetUserChartData", success: function (result) {
+                            console.log(result, 'Data');
+
+
+                            // User Chart Data
+                            var ctx = document.getElementById('myUserChart').getContext('2d');
+                            var myUserChart = new Chart(ctx, {
+                                type: 'pie',
+                                data: {
+                                    //labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+
+                                    labels: ['Administrator', 'Customer', 'AdvertisementOwner'],
+                                    datasets: [{
+                                        label: '# of Votes',
+                                        data: [12, 19, 3],
+                                        backgroundColor: [
+                                            //'rgba(255, 99, 132, 0.1)',
+                                            //'rgba(54, 162, 235, 0.1)',
+                                            //'rgba(255, 206, 86, 0.1)',
+                                            //'rgba(75, 192, 192, 0.1)',
+                                            //'rgba(153, 102, 255, 0.1)',
+                                            //'rgba(255, 159, 64, 0.1)'
+                                            'rgb(255, 99, 132)',
+                                            'rgb(54, 162, 235)',
+                                            'rgb(255, 206, 86)',
+
+
+                                        ],
+                                        borderColor: [
+                                            //'rgba(255, 99, 132, 1)',
+                                            //'rgba(54, 162, 235, 1)',
+                                            //'rgba(255, 206, 86, 1)',
+                                            //'rgba(75, 192, 192, 1)',
+                                            //'rgba(153, 102, 255, 1)',
+                                            //'rgba(255, 159, 64, 1)'
+                                            'rgb(255, 99, 132)',
+                                            'rgb(54, 162, 235)',
+                                            'rgb(255, 206, 86)',
+
+                                        ],
+                                        borderWidth: 1
+                                    }]
+                                },
+                                options: {
+
+                                }
+                            });
+
+                            //// RealEstate Chart Data Data
+                            //var ctx = document.getElementById('myRealEstateChart').getContext('2d');
+                            //var myChart = new Chart(ctx, {
+                            //    type: 'pie',
+                            //    data: {
+                            //        //labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+                            //        labels: ['department', 'Villa', 'Comapny', 'ground', 'house'],
+                            //        datasets: [{
+                            //            label: '# of Votes',
+                            //            data: [12, 19, 3],
+                            //            backgroundColor: [
+                            //                //'rgba(255, 99, 132, 0.1)',
+                            //                //'rgba(54, 162, 235, 0.1)',
+                            //                //'rgba(255, 206, 86, 0.1)',
+                            //                //'rgba(75, 192, 192, 0.1)',
+                            //                //'rgba(153, 102, 255, 0.1)',
+                            //                //'rgba(255, 159, 64, 0.1)'
+                            //                'rgb(255, 99, 132)',
+                            //                'rgb(54, 162, 235)',
+                            //                'rgb(255, 206, 86)',
+                            //                'rgb(75, 192, 192)',
+                            //                'rgb(153, 102, 255)',
+
+                            //            ],
+                            //            borderColor: [
+                            //                //'rgba(255, 99, 132, 1)',
+                            //                //'rgba(54, 162, 235, 1)',
+                            //                //'rgba(255, 206, 86, 1)',
+                            //                //'rgba(75, 192, 192, 1)',
+                            //                //'rgba(153, 102, 255, 1)',
+                            //                //'rgba(255, 159, 64, 1)'
+                            //                'rgb(255, 99, 132)',
+                            //                'rgb(54, 162, 235)',
+                            //                'rgb(255, 206, 86)',
+                            //                'rgba(75, 192, 192)',
+                            //                'rgba(153, 102, 255)',
+                            //            ],
+                            //            borderWidth: 1
+                            //        }]
+                            //    },
+                            //    options: {
+
+                            //    }
+                            //});
+
+                            //// Contract Chart Data
+                            //var ctx = document.getElementById('myContractChart').getContext('2d');
+                            //var myChart = new Chart(ctx, {
+                            //    type: 'pie',
+                            //    data: {
+                            //        //labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+                            //        labels: ['rental', 'sale', 'buy'],
+                            //        datasets: [{
+                            //            label: '# of Votes',
+                            //            data: [12, 19, 3],
+                            //            backgroundColor: [
+                            //                //'rgba(255, 99, 132, 0.1)',
+                            //                //'rgba(54, 162, 235, 0.1)',
+                            //                //'rgba(255, 206, 86, 0.1)',
+                            //                //'rgba(75, 192, 192, 0.1)',
+                            //                //'rgba(153, 102, 255, 0.1)',
+                            //                //'rgba(255, 159, 64, 0.1)'
+                            //                'rgb(255, 99, 132)',
+                            //                'rgb(54, 162, 235)',
+                            //                'rgb(255, 206, 86)',
+
+
+                            //            ],
+                            //            borderColor: [
+                            //                //'rgba(255, 99, 132, 1)',
+                            //                //'rgba(54, 162, 235, 1)',
+                            //                //'rgba(255, 206, 86, 1)',
+                            //                //'rgba(75, 192, 192, 1)',
+                            //                //'rgba(153, 102, 255, 1)',
+                            //                //'rgba(255, 159, 64, 1)'
+                            //                'rgb(255, 99, 132)',
+                            //                'rgb(54, 162, 235)',
+                            //                'rgb(255, 206, 86)',
+
+                            //            ],
+                            //            borderWidth: 1
+                            //        }]
+                            //    },
+                            //    options: {
+
+                            //    }
+                            //});
+
+
+
+
+
+            </script>*@
+
+        <script>
+
+            var userTypeCanvas = document.getElementById('myUserChart').getContext('2d');
+            var RealEstateTypeCanvas = document.getElementById('myRealEstateChart').getContext('2d');
+            var ContractTypeCanvas = document.getElementById('myContractChart').getContext('2d');
+
+
+            var myUserChartLabels = [];
+            var myUserChartValues = [];
+            var myUserChartColores = [];
+
+            var myRealEstateChartLabels = [];
+            var myRealEstateChartValues = [];
+            var myRealEstateChartColores = [];
+
+            var myContractChartLabels = [];
+            var myContractChartValues = [];
+            var myContractChartColores = [];
+
+            $.ajax({
+                url: "/Home/GetContractCharData", success: function (result) {
+                    $(result).each(function (index) {
+                        myContractChartLabels.push(result[index].key);
+                        myContractChartValues.push(result[index].value);
+                        myContractChartColores.push(result[index].color);
+                    });
+                    var ContractTypeChart = new Chart(ContractTypeCanvas, {
+                        type: 'pie',
+                        data: {
+                            labels: myContractChartLabels,
+                            datasets: [{
+                                label: '# of Votes',
+                                data: myContractChartValues,
+                                backgroundColor: myContractChartColores
+                            }]
+                        },
+                        options: {
+
+                        }
+                    });
+                }
+            });
+
+            $.ajax({
+                url: "/Home/GetUserRealEstateData", success: function (result) {
+                    $(result).each(function (index) {
+                        myRealEstateChartLabels.push(result[index].key);
+                        myRealEstateChartValues.push(result[index].value);
+                        myRealEstateChartColores.push(result[index].color);
+                    });
+                    var RealEstateTypeChart = new Chart(RealEstateTypeCanvas, {
+                        type: 'pie',
+                        data: {
+                            labels: myRealEstateChartLabels,
+                            datasets: [{
+                                label: '# of Votes',
+                                data: myRealEstateChartValues,
+                                backgroundColor: myRealEstateChartColores
+                            }]
+                        },
+                        options: {
+
+                        }
+                    });
+                }
+            });
+
+
+
+            $.ajax({
+                url: "/Home/GetUserChartData", success: function (result) {
+                    $(result).each(function (index) {
+                        myUserChartLabels.push(result[index].key);
+                        myUserChartValues.push(result[index].value);
+                        myUserChartColores.push(result[index].color);
+                    });
+                    var userTypeChart = new Chart(userTypeCanvas, {
+                        type: 'pie',
+                        data: {
+                            labels: myUserChartLabels,
+                            datasets: [{
+                                label: '# of Votes',
+                                data: myUserChartValues,
+                                backgroundColor: myUserChartColores
+                            }]
+                        },
+                        options: {
+
+                        }
+                    });
+                }
+            });
+
+
+
+
+        </script>
+
+    }
+
+

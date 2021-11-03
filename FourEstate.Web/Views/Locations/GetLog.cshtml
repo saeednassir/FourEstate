@@ -1,0 +1,34 @@
+﻿@model List<ContentChangeLogViewModel>
+
+@{
+    Layout = null;
+}
+
+@if (Model.Any())
+{
+    <table class="table table-hover">
+        <tr>
+            <th>الوقت</th>
+            <th>من</th>
+            <th>الى</th>
+        </tr>
+
+        @foreach (var x in Model)
+        {
+
+            <tr>
+                <th>@x.ChangeAt</th>
+                <th>@x.Old</th>
+                <th>@x.New</th>
+            </tr>
+        }
+    </table>
+}
+else
+{
+
+    <div class="alert alert-warning">
+        No Change Log Yet !!
+
+    </div>
+}
